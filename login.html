@@ -51,7 +51,7 @@
           <form action="/" aria-label="Formulaire de connexion">
             <div class="mb-4">
               <label for="email" class="block text-sm font-medium text-gray-700"
-                >Email</label
+                >Email (doit être une adresse email valide)</label
               >
               <input
                 type="email"
@@ -63,11 +63,11 @@
                 autofocus
               >
             </div>
-            <div class="mb-6">
+            <div class="mb-6 relative">
               <label
                 for="password"
                 class="block text-sm font-medium text-gray-700"
-                >Mot de passe</label
+                >Mot de passe (6 caractères minimum)</label
               >
               <input
                 type="password"
@@ -77,6 +77,27 @@
                 required
                 autocomplete="current-password"
                 minlength="6"
+              >
+              <button
+                type="button"
+                id="toggle-password"
+                class="absolute right-2 top-8"
+                >Afficher le mot de passe</button
+              >
+            </div>
+            <div class="mb-6">
+              <label
+                for="confirm-password"
+                class="block text-sm font-medium text-gray-700"
+                >Confirmer le mot de passe</label
+              >
+              <input
+                type="password"
+                id="confirm-password"
+                name="confirm-password"
+                class="mt-1 p-2 block w-full rounded-md bg-gray-100 border-gray-300 focus:ring-indigo-500 focus:border-indigo-500"
+                required
+                autocomplete="off"
               >
             </div>
             <div class="mb-6">
@@ -95,4 +116,33 @@
       <p>© 2024 Mon blog. Tous droits réservés.</p>
     </footer>
   </body>
+  <script>
+  document.getElementById('toggle-password').addEventListener('click', function () {
+    var passwordInput = document.getElementById('password');
+    if (passwordInput.type === 'password') {
+      passwordInput.type = 'text';
+      this.textContent = 'Masquer le mot de passe';
+    } else {
+      passwordInput.type = 'password';
+      this.textContent = 'Afficher le mot de passe';
+    }
+  });</script>
+  <script>
+    document.querySelector('form').addEventListener('submit', function (event) {
+  // Empêche la soumission réelle du formulaire
+  event.preventDefault();
+
+  // Vérifie si le formulaire est valide
+  if (this.checkValidity()) {
+    // Affiche une alerte
+    alert('Le formulaire a été soumis avec succès !');
+
+    // Redirige vers la page d'accueil
+    window.location.href = '/';
+  } else {
+    // Affiche une alerte
+    alert('Veuillez remplir correctement tous les champs du formulaire.');
+  }
+});
+  </script>
 </html>
