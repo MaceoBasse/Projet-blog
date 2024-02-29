@@ -127,34 +127,34 @@
       <p><a href="/glossaire.html" class="text-white underline">Glossaire</a></p>
       <p><a href="https://twitter.com/votreprofil" target="_blank" rel="noopener noreferrer" class="text-white underline">Twitter</a></p>
     </footer>
+    <script>
+      document.getElementById('toggle-password').addEventListener('click', function () {
+        var passwordInput = document.getElementById('password');
+        if (passwordInput.type === 'password') {
+          passwordInput.type = 'text';
+          this.textContent = 'Masquer le mot de passe';
+        } else {
+          passwordInput.type = 'password';
+          this.textContent = 'Afficher le mot de passe';
+        }
+      });</script>
+      <script>
+        document.querySelector('form').addEventListener('submit', function (event) {
+      // Empêche la soumission réelle du formulaire
+      event.preventDefault();
+    
+      // Vérifie si le formulaire est valide
+      if (this.checkValidity()) {
+        // Affiche une alerte
+        alert('Le formulaire a été soumis avec succès !');
+    
+        // Redirige vers la page d'accueil
+        window.location.href = '/';
+      } else {
+        // Affiche une alerte
+        alert('Veuillez remplir correctement tous les champs du formulaire.');
+      }
+    });
+      </script>
   </body>
-  <script>
-  document.getElementById('toggle-password').addEventListener('click', function () {
-    var passwordInput = document.getElementById('password');
-    if (passwordInput.type === 'password') {
-      passwordInput.type = 'text';
-      this.textContent = 'Masquer le mot de passe';
-    } else {
-      passwordInput.type = 'password';
-      this.textContent = 'Afficher le mot de passe';
-    }
-  });</script>
-  <script>
-    document.querySelector('form').addEventListener('submit', function (event) {
-  // Empêche la soumission réelle du formulaire
-  event.preventDefault();
-
-  // Vérifie si le formulaire est valide
-  if (this.checkValidity()) {
-    // Affiche une alerte
-    alert('Le formulaire a été soumis avec succès !');
-
-    // Redirige vers la page d'accueil
-    window.location.href = '/';
-  } else {
-    // Affiche une alerte
-    alert('Veuillez remplir correctement tous les champs du formulaire.');
-  }
-});
-  </script>
 </html>
