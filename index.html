@@ -3,8 +3,10 @@
   <head>
     <meta charset="UTF-8" >
     <meta name="viewport" content="width=device-width, initial-scale=1.0" >
+    <meta name="description" content="Découvrez les derniers articles de mon blog.">
     <title>Mon blog</title>
     <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="icon" type="image/png" href="images/favicon.png" >
   </head>
   <body class="flex flex-col min-h-screen">
     <header>
@@ -29,15 +31,20 @@
             <p class="font-semibold text-xl tracking-tight ml-4">Mon blog</p>
           </div>
         </a>
-        <div>
-          <a
-            href="/login.html"
-            aria-label="Se connecter à votre compte"
-            class="inline-block font-bold text-sm px-4 py-2 leading-none border rounded text-white border-white hover:border-transparent hover:text-blue-500 hover:bg-white mt-4 lg:mt-0"
-          >
-            Login
-          </a>
-        </div>
+        <div class="flex">
+          <form action="/resultats.html" method="get">
+            <label for="search" class="sr-only">Rechercher</label>
+            <input type="search" id="search" name="q" placeholder="Rechercher..." class="mr-2 rounded">
+            <button type="submit" class="inline-block font-bold text-sm px-4 py-2 leading-none border rounded text-white border-white hover:border-transparent hover:text-blue-500 hover:bg-white mt-4 lg:mt-0">Rechercher</button>
+          </form>
+        <a
+          href="/login.html"
+          aria-label="Se connecter à votre compte"
+          class="inline-block font-bold text-sm ml-4 px-4 py-2 leading-none border rounded text-white border-white hover:border-transparent hover:text-blue-500 hover:bg-white mt-4 lg:mt-0"
+        >
+          Login
+        </a>
+      </div>
       </nav>
     </header>
     <main class="flex-grow">
@@ -56,6 +63,7 @@
                 <h2 class="text-blue-500 text-xl font-bold">
                   Titre de l'article 1
                 </h2>
+                <time datetime="2022-03-01">Publié le 1er Mars, 2022</time>
                 <!-- Description de l'article -->
                 <p class="mt-2 text-gray-600">
                   Description de l'article 1. Lorem ipsum dolor sit amet
@@ -98,6 +106,7 @@
                 <h2 class="text-blue-500 text-xl font-bold">
                   Titre de l'article 2
                 </h2>
+                <time datetime="2022-03-01">Publié le 1er Mars, 2022</time>
                 <!-- Description de l'article -->
                 <p class="mt-2 text-gray-600">
                   Description de l'article 2. Lorem ipsum dolor sit amet
@@ -140,6 +149,7 @@
                 <h2 class="text-blue-500 text-xl font-bold">
                   Titre de l'article 3
                 </h2>
+                <time datetime="2022-03-01">Publié le 1er Mars, 2022</time>
                 <!-- Description de l'article -->
                 <p class="mt-2 text-gray-600">
                   Description de l'article 3. Lorem ipsum dolor sit amet
@@ -182,6 +192,7 @@
                 <h2 class="text-blue-500 text-xl font-bold">
                   Titre de l'article 4
                 </h2>
+                <time datetime="2022-03-01">Publié le 1er Mars, 2022</time>
                 <!-- Description de l'article -->
                 <p class="mt-2 text-gray-600">
                   Description de l'article 4. Lorem ipsum dolor sit amet
@@ -224,6 +235,7 @@
                 <h2 class="text-blue-500 text-xl font-bold">
                   Titre de l'article 5
                 </h2>
+                <time datetime="2022-03-01">Publié le 1er Mars, 2022</time>
                 <!-- Description de l'article -->
                 <p class="mt-2 text-gray-600">
                   Description de l'article 5. Lorem ipsum dolor sit amet
@@ -256,6 +268,10 @@
     </main>
     <footer class="bg-blue-600 text-white text-center p-3 w-full">
       <p>© 2024 Mon blog. Tous droits réservés.</p>
+      <p><a href="/mentions-legales.html" class="text-white underline">Mentions légales</a></p>
+      <p><a href="/plan-du-site.html" class="text-white underline">Plan du site</a></p>
+      <p><a href="/glossaire.html" class="text-white underline">Glossaire</a></p>
+      <p><a href="https://twitter.com/votreprofil" target="_blank" rel="noopener noreferrer" class="text-white underline">Twitter</a></p>
     </footer>
   </body>
 </html>
